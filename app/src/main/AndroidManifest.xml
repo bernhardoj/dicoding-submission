@@ -16,6 +16,7 @@
         <activity
             android:name=".ComposerPageActivity"
             android:label="Composer"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
