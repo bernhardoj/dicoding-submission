@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,62 +8,68 @@
     tools:context=".ComposerPageActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/composer_item_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:contentDescription="@string/composer_item_image"
-            tools:src="@android:color/darker_gray" />
+            <ImageView
+                android:id="@+id/composer_item_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/composer_item_image"
+                tools:src="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:id="@+id/composer_item_name"
+                tools:text="Composer Name" />
+        </LinearLayout>
 
         <TextView
+            android:id="@+id/composer_detail"
+            style="@style/Body"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            tools:text="Composer Detail here" />
+
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:gravity="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:id="@+id/composer_item_name"
-            tools:text="Composer Name" />
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Subtitle"
+                    android:text="@string/lahir" />
+
+                <TextView
+                    android:id="@+id/composer_born"
+                    style="@style/Body"
+                    tools:text="01 Agustus 2000, Jerman" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Subtitle"
+                    android:text="@string/wafat" />
+
+                <TextView
+                    android:id="@+id/composer_died"
+                    style="@style/Body"
+                    tools:text="02 Agustus 2001, Indonesia" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/composer_detail"
-        style="@style/Body"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        tools:text="Composer Detail here" />
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TableRow>
-
-            <TextView
-                style="@style/Subtitle"
-                android:text="@string/lahir" />
-
-            <TextView
-                android:id="@+id/composer_born"
-                style="@style/Body"
-                tools:text="01 Agustus 2000, Jerman" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                style="@style/Subtitle"
-                android:text="@string/wafat" />
-
-            <TextView
-                android:id="@+id/composer_died"
-                style="@style/Body"
-                tools:text="02 Agustus 2001, Indonesia" />
-        </TableRow>
-    </TableLayout>
-</LinearLayout>
+</ScrollView>
