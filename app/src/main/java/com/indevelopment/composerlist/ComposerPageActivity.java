@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.indevelopment.composerlist.Model.Composer;
 
 public class ComposerPageActivity extends AppCompatActivity {
@@ -39,6 +40,9 @@ public class ComposerPageActivity extends AppCompatActivity {
                 mComposerDetail.setText(mComposer.getDetail());
                 mComposerBorn.setText(mComposer.getBorn());
                 mComposerDied.setText(mComposer.getDied());
+                Glide.with(this)
+                        .load(mComposer.getPhoto())
+                        .into(mComposerImage);
             }
         }
     }
