@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComposerPageActivity">
+    tools:context=".ComposerPageActivity"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:src="@android:color/darker_gray"
+            android:id="@+id/composer_item_img"
+            android:contentDescription="@string/composer_item_image"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:text="Composer Name"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/Body"
+        android:id="@+id/composer_detail"
+        tools:text="Composer Detail here"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                style="@style/Subtitle"
+                android:text="@string/lahir"/>
+            <TextView
+                style="@style/Body"
+                tools:text="01 Agustus 2000, Jerman"
+                android:id="@+id/composer_born"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                style="@style/Subtitle"
+                android:text="@string/wafat"/>
+            <TextView
+                style="@style/Body"
+                tools:text="02 Agustus 2001, Indonesia"
+                android:id="@+id/composer_died"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
