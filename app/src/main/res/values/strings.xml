@@ -3,4 +3,5 @@
     <string name="composer_image">composer_image</string>
     <string name="composer_item_image">composer_item_image</string>
     <string name="lahir">Lahir</string>
+    <string name="wafat">Wafat</string>
 </resources>
