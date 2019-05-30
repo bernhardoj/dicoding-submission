@@ -71,6 +71,21 @@
                     style="@style/Body"
                     tools:text="02 Agustus 2001, Indonesia" />
             </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Body.Grey"
+                    android:text="@string/tanda_tangan" />
+
+                <ImageView
+                    android:id="@+id/signature_img"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/composer_item_image"
+                    tools:src="@android:color/darker_gray" />
+            </TableRow>
         </TableLayout>
     </LinearLayout>
 
