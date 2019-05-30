@@ -17,6 +17,7 @@ import com.indevelopment.composerlist.Model.Composer;
 import com.indevelopment.composerlist.R;
 
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHolder> {
@@ -57,32 +58,7 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
 
         void bind(Composer composer) {
             mComposerName.setText(composer.getName());
-            new DownloadImageTask(mComposerImage).execute(composer.getPhoto());
         }
     }
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
-
-        DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            Bitmap mIcon11 = null;
-            try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return mIcon11;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-        }
-    }
 }
