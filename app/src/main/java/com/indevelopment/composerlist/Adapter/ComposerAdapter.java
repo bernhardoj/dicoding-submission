@@ -56,7 +56,7 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
             mParent = itemView.findViewById(R.id.item_list);
         }
 
-        void bind(Composer composer) {
+        void bind(final Composer composer) {
             mComposerName.setText(composer.getName());
             Glide.with(itemView)
                     .load(composer.getPhoto())
@@ -67,6 +67,7 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
                 public void onClick(View v) {
                     Intent intent = new Intent(itemView.getContext(), ComposerPageActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    intent.putExtra(ComposerPageActivity.COMPOSER, composer);
                     itemView.getContext().startActivity(intent);
                 }
             });
