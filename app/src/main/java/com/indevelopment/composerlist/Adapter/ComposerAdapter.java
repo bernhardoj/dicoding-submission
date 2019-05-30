@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.indevelopment.composerlist.Model.Composer;
 import com.indevelopment.composerlist.R;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -58,6 +60,17 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
 
         void bind(Composer composer) {
             mComposerName.setText(composer.getName());
+            Picasso.get().load(composer.getPhoto()).into(mComposerImage, new Callback() {
+                @Override
+                public void onSuccess() {
+
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    mComposerImage.setImageDrawable(itemView.getResources().getDrawable(R.drawable.not_found));
+                }
+            });
         }
     }
 
