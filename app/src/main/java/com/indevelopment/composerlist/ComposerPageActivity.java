@@ -11,7 +11,7 @@ public class ComposerPageActivity extends AppCompatActivity {
 
     public static String COMPOSER = "COMPOSER";
 
-    private Composer mComposer;
+    Composer mComposer;
 
     TextView mComposerName, mComposerDetail, mComposerBorn, mComposerDied;
 
@@ -22,10 +22,15 @@ public class ComposerPageActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        if(bundle != null) {
+        if (bundle != null) {
             mComposer = bundle.getParcelable(COMPOSER);
 
-
+            if (mComposer != null) {
+                mComposerName.setText(mComposer.getName());
+                mComposerDetail.setText(mComposer.getDetail());
+                mComposerBorn.setText(mComposer.getBorn());
+                mComposerDied.setText(mComposer.getDied());
+            }
         }
     }
 }
