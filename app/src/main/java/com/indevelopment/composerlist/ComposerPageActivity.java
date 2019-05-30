@@ -16,7 +16,7 @@ public class ComposerPageActivity extends AppCompatActivity {
 
     Composer mComposer;
 
-    ImageView mComposerImage;
+    ImageView mComposerImage, mComposerSignature;
     TextView mComposerName, mComposerDetail, mComposerBorn, mComposerDied;
 
     @Override
@@ -43,6 +43,9 @@ public class ComposerPageActivity extends AppCompatActivity {
                 Glide.with(this)
                         .load(mComposer.getPhoto())
                         .into(mComposerImage);
+                Glide.with(this)
+                        .load(mComposer.getSignature())
+                        .into(mComposerSignature);
             }
         }
     }
