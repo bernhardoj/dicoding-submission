@@ -1,15 +1,18 @@
 package com.indevelopment.composerlist.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.indevelopment.composerlist.ComposerPageActivity;
 import com.indevelopment.composerlist.Model.Composer;
 import com.indevelopment.composerlist.R;
 
@@ -44,11 +47,13 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
 
         ImageView mComposerImage;
         TextView mComposerName;
+        RelativeLayout mParent;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             mComposerImage = itemView.findViewById(R.id.composerImage);
             mComposerName = itemView.findViewById(R.id.composerName);
+            mParent = itemView.findViewById(R.id.item_list);
         }
 
         void bind(Composer composer) {
@@ -56,6 +61,15 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
             Glide.with(itemView)
                     .load(composer.getPhoto())
                     .into(mComposerImage);
+
+            mParent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), ComposerPageActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
     }
 
