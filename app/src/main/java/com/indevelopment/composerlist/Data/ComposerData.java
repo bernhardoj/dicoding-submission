@@ -1,7 +1,11 @@
 package com.indevelopment.composerlist.Data;
 
+import com.indevelopment.composerlist.Model.Composer;
+
+import java.util.ArrayList;
+
 public class ComposerData {
-    private static String[][] data =
+    private static String[][] datas =
         {
             {"Wolfgang Amadeus Mozart", "Wolfgang Amadeus Mozart (bahasa Jerman: [ˈvɔlfɡaŋ amaˈdeus ˈmoːtsaʁt]) dianggap sebagai salah satu dari komponis musik klasik Eropa yang terpenting dan paling terkenal dalam sejarah. Karya-karyanya (sekitar 700 lagu) termasuk gubahan-gubahan yang secara luas diakui sebagai puncak karya musik simfoni, musik kamar, musik piano, musik opera, dan musik paduan suara. Contoh karyanya adalah opera Don Giovanni dan Die Zauberflöte. Banyak dari karya Mozart dianggap sebagai repertoar standar konser klasik dan diakui sebagai mahakarya musik zaman klasik. Karya-karyanya diurutkan dalam katalog Köchel-Verzeichnis.", "Salzburg, 27 Januari 1756", "Wina, Austria, 5 Desember 1791 (umur 35)", "https://id.wikipedia.org/wiki/Berkas:Martini_bologna_mozart_1777.jpg", "https://en.wikipedia.org/wiki/File:Wolfgang_Amadeus_Mozart_Signature.svg"},
             {"Ludwig van Beethoven", "Ludwig van Beethoven (/ˈlʊdvɪɡ væn ˈbeɪˌtoʊvən/; bahasa Jerman: [ˈluːtvɪç fan ˈbeːtˌhoˑfn̩]) adalah seorang komponis musik klasik dari Jerman. Karyanya yang terkenal adalah simfoni ke-lima dan ke-sembilan, dan juga lagu piano Für Elise. Ia dipandang sebagai salah satu komponis yang terbesar dan merupakan tokoh penting dalam masa peralihan antara Zaman Klasik dan Zaman Romantik. Semasa muda, ia adalah pianis yang berbakat, populer di antara orang-orang penting dan kaya di Wina, Austria, tempatnya tinggal. Namun, pada tahun 1801, ia mulai kehilangan pendengarannya.", "Bonn, Elektorat Cologne, 17 Desember 1770", "Wina, Kekaisaran Austria, 26 Maret 1827 (umur 56)", "https://id.wikipedia.org/wiki/Berkas:Beethoven.jpg", "https://id.wikipedia.org/wiki/Berkas:Beethoven_Signature.svg"},
@@ -12,5 +16,14 @@ public class ComposerData {
             {"Franz Liszt", "Franz Liszt (Ferenc Liszt) adalah seorang komposer, pianis, pengaba, dan guru musik asal Hungaria pada abad ke-19. Semasa hidupnya, Liszt menulis sekitar 700 komposisi musik, termasuk di dalamnya lagu gerejawi dan puisi simfonis. Selain itu, Liszt juga telah mengajar 400 murid dan memperkenalkan bentuk musik baru di era Romantisisme serta merupakan salah satu pianis terbesar dalam sejarah.", "Raiding, Hungaria, 22 Oktober 1811", "Bayreuth, Jerman, 31 Juli 1886", "https://id.wikipedia.org/wiki/Berkas:Franz_Liszt_by_Nadar,_March_1886.png", "https://commons.wikimedia.org/wiki/File:Liszt_sign.JPG"}
         };
 
-    
+    public static ArrayList<Composer> getComposers() {
+        Composer composer;
+        ArrayList<Composer> composers = new ArrayList<>();
+        for(String[] data : datas) {
+            composer = new Composer(data[0], data[1], data[2], data[3], data[4], data[5]);
+            composers.add(composer);
+        }
+
+        return composers;
+    }
 }
