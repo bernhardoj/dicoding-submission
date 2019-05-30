@@ -1,6 +1,9 @@
 package com.indevelopment.composerlist.Model;
 
-public class Composer {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Composer implements Parcelable {
     private String name, detail, born, died, photo, signature;
 
     public Composer(String name, String detail, String born, String died, String photo, String signature) {
@@ -11,6 +14,42 @@ public class Composer {
         this.photo = photo;
         this.signature = signature;
     }
+
+    private Composer(Parcel in) {
+        name = in.readString();
+        detail = in.readString();
+        born = in.readString();
+        died = in.readString();
+        photo = in.readString();
+        signature = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(detail);
+        dest.writeString(born);
+        dest.writeString(died);
+        dest.writeString(photo);
+        dest.writeString(signature);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Composer> CREATOR = new Creator<Composer>() {
+        @Override
+        public Composer createFromParcel(Parcel in) {
+            return new Composer(in);
+        }
+
+        @Override
+        public Composer[] newArray(int size) {
+            return new Composer[size];
+        }
+    };
 
     public String getName() {
         return name;
