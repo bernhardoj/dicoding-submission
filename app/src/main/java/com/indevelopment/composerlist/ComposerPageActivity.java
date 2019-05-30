@@ -3,6 +3,7 @@ package com.indevelopment.composerlist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.indevelopment.composerlist.Model.Composer;
@@ -13,6 +14,7 @@ public class ComposerPageActivity extends AppCompatActivity {
 
     Composer mComposer;
 
+    ImageView mComposerImage;
     TextView mComposerName, mComposerDetail, mComposerBorn, mComposerDied;
 
     @Override
@@ -22,10 +24,11 @@ public class ComposerPageActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        mComposerName = findViewById(R.id.composerName);
+        mComposerName = findViewById(R.id.composer_item_name);
         mComposerDetail = findViewById(R.id.composer_detail);
         mComposerBorn = findViewById(R.id.composer_born);
         mComposerDied = findViewById(R.id.composer_died);
+        mComposerImage = findViewById(R.id.composer_item_img);
 
         if (bundle != null) {
             mComposer = bundle.getParcelable(COMPOSER);
