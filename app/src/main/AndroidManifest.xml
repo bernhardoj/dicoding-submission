@@ -14,6 +14,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ComposerPageActivity"
+            android:label="Composer"
             android:screenOrientation="portrait">
 
         </activity>
