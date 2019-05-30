@@ -11,8 +11,18 @@
         tools:src="@android:color/darker_gray"
         android:id="@+id/composerImage"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
         android:contentDescription="@string/composer_image"/>
 
-    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_toEndOf="@+id/composerImage"
+        android:layout_toRightOf="@+id/composerImage"
+        tools:text="Composer Name"
+        android:textStyle="bold"
+        android:id="@+id/composerName"/>
 </RelativeLayout>
