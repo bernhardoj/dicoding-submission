@@ -16,7 +16,7 @@ public class ComposerPageActivity extends AppCompatActivity {
 
     Composer mComposer;
 
-    ImageView mComposerImage, mComposerSignature;
+    ImageView mComposerImage;
     TextView mComposerName, mComposerDetail, mComposerBorn, mComposerDied;
 
     @Override
@@ -31,7 +31,6 @@ public class ComposerPageActivity extends AppCompatActivity {
         mComposerBorn = findViewById(R.id.composer_born);
         mComposerDied = findViewById(R.id.composer_died);
         mComposerImage = findViewById(R.id.composer_item_img);
-        mComposerSignature = findViewById(R.id.signature_img);
 
         if (bundle != null) {
             mComposer = bundle.getParcelable(COMPOSER);
@@ -44,9 +43,6 @@ public class ComposerPageActivity extends AppCompatActivity {
                 Glide.with(this)
                         .load(mComposer.getPhoto())
                         .into(mComposerImage);
-                Glide.with(this)
-                        .load(mComposer.getSignature())
-                        .into(mComposerSignature);
             }
         }
     }
