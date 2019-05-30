@@ -22,6 +22,11 @@ public class ComposerPageActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
+        mComposerName = findViewById(R.id.composerName);
+        mComposerDetail = findViewById(R.id.composer_detail);
+        mComposerBorn = findViewById(R.id.composer_born);
+        mComposerDied = findViewById(R.id.composer_died);
+
         if (bundle != null) {
             mComposer = bundle.getParcelable(COMPOSER);
 
