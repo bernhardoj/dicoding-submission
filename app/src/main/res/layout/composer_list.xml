@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
-    android:id="@+id/item_list">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ImageView
+        android:id="@+id/composerImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        tools:src="@android:color/darker_gray"
-        android:id="@+id/composerImage"
-        android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
-        android:contentDescription="@string/composer_image"/>
+        android:layout_marginRight="16dp"
+        android:contentDescription="@string/composer_image"
+        tools:src="@android:color/darker_gray" />
 
     <TextView
+        android:id="@+id/composerName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -24,7 +26,6 @@
         android:layout_marginTop="26dp"
         android:layout_toEndOf="@+id/composerImage"
         android:layout_toRightOf="@+id/composerImage"
-        tools:text="Composer Name"
         android:textStyle="bold"
-        android:id="@+id/composerName"/>
+        tools:text="Composer Name" />
 </RelativeLayout>
