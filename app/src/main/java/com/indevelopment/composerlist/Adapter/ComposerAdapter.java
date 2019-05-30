@@ -56,14 +56,15 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
         }
 
         void bind(Composer composer) {
-            
+            mComposerName.setText(composer.getName());
+            new DownloadImageTask(mComposerImage).execute(composer.getPhoto());
         }
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
-        public DownloadImageTask(ImageView bmImage) {
+        DownloadImageTask(ImageView bmImage) {
             this.bmImage = bmImage;
         }
 
