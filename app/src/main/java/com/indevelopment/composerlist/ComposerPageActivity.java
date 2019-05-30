@@ -9,7 +9,6 @@ import com.indevelopment.composerlist.Model.Composer;
 public class ComposerPageActivity extends AppCompatActivity {
 
     public static String COMPOSER = "COMPOSER";
-    private String mActivityLabel = "";
 
     private Composer mComposer;
 
@@ -19,5 +18,10 @@ public class ComposerPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_composer_page);
 
         Bundle bundle = getIntent().getExtras();
+
+        if(bundle != null) {
+            mComposer = bundle.getParcelable(COMPOSER);
+
+        }
     }
 }
