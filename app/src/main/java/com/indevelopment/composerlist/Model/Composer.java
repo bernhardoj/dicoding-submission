@@ -4,15 +4,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Composer implements Parcelable {
-    private String name, detail, born, died, photo, signature;
+    private String name, detail, born, died, photo;
 
-    public Composer(String name, String detail, String born, String died, String photo, String signature) {
+    public Composer(String name, String detail, String born, String died, String photo) {
         this.name = name;
         this.detail = detail;
         this.born = born;
         this.died = died;
         this.photo = photo;
-        this.signature = signature;
     }
 
     private Composer(Parcel in) {
@@ -21,7 +20,6 @@ public class Composer implements Parcelable {
         born = in.readString();
         died = in.readString();
         photo = in.readString();
-        signature = in.readString();
     }
 
     @Override
@@ -31,7 +29,6 @@ public class Composer implements Parcelable {
         dest.writeString(born);
         dest.writeString(died);
         dest.writeString(photo);
-        dest.writeString(signature);
     }
 
     @Override
@@ -89,13 +86,5 @@ public class Composer implements Parcelable {
 
     public void setPhoto(String photo) {
         this.photo = photo;
-    }
-
-    public String getSignature() {
-        return signature;
-    }
-
-    public void setSignature(String signature) {
-        this.signature = signature;
     }
 }
