@@ -1,9 +1,5 @@
 package com.indevelopment.composerlist.Adapter;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.indevelopment.composerlist.Model.Composer;
 import com.indevelopment.composerlist.R;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHolder> {
@@ -60,17 +53,9 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
 
         void bind(Composer composer) {
             mComposerName.setText(composer.getName());
-            Picasso.get().load(composer.getPhoto()).into(mComposerImage, new Callback() {
-                @Override
-                public void onSuccess() {
-
-                }
-
-                @Override
-                public void onError(Exception e) {
-                    mComposerImage.setImageDrawable(itemView.getResources().getDrawable(R.drawable.not_found));
-                }
-            });
+            Glide.with(itemView)
+                    .load(composer.getPhoto())
+                    .into(mComposerImage);
         }
     }
 
