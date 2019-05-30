@@ -3,6 +3,8 @@ package com.indevelopment.composerlist.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,13 +41,17 @@ public class ComposerAdapter extends RecyclerView.Adapter<ComposerAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView mComposerImage;
+        TextView mComposerName;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
+            mComposerImage = itemView.findViewById(R.id.composerImage);
+            mComposerName = itemView.findViewById(R.id.composerName);
         }
 
         void bind(Composer composer) {
-
+            
         }
     }
 }
