@@ -31,6 +31,7 @@ public class ComposerPageActivity extends AppCompatActivity {
         mComposerBorn = findViewById(R.id.composer_born);
         mComposerDied = findViewById(R.id.composer_died);
         mComposerImage = findViewById(R.id.composer_item_img);
+        mComposerSignature = findViewById(R.id.signature_img);
 
         if (bundle != null) {
             mComposer = bundle.getParcelable(COMPOSER);
